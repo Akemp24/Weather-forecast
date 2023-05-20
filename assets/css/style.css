@@ -1,6 +1,16 @@
 /* header is blue */
-
-/* search button is light blue */
+header {
+    color: white;
+    background-color: blue;
+    text-align: center;
+    padding: 10px;
+}
+/* search button is light blue and maybe a diff styling like rounded?*/
+#search-btn {
+    background-color: lightblue;
+    border-radius: 25%;
+    
+}
 
 /* previous searched cities are gray */
 
