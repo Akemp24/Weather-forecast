@@ -13,7 +13,21 @@ $(function () {
             localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
             $("#search-city").val("");
            
-            displaySearchHistory()
+            showSearchHistory()
         }
     }
+
+    function showSearchHistory () {
+        var showHistory = $("#search-history");
+        showHistory.empty();
+        $.each(searchHistory, function(index, value) {
+            var searchItem = $("<p>").text(value);
+            showHistory.append(searchItem);
+        });
+    }
+
+
+
+
+
 })
