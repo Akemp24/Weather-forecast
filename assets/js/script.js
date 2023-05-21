@@ -32,9 +32,16 @@ $(document).ready(function() {
     function buttonClick() {
       saveSearch();
     }
+
+    function clearHistory (){
+      $('#search-history').empty();
+    }
   
     // Add event listener for the search button click
     $('#search-btn').on('click', buttonClick);
+
+    // Add event listener for the clear button click
+    $('clear').on('click', clearHistory);
   
     showSearchHistory();
   });

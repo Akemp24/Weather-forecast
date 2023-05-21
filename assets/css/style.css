@@ -6,7 +6,8 @@ header {
     padding: 10px;
 }
 /* search button is light blue and maybe a diff styling like rounded?*/
-#search-btn {
+#search-btn,
+#clear-btn {
     background-color: lightblue;
     border-radius: 25%;
     
