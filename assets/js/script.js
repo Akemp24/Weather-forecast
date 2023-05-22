@@ -1,3 +1,7 @@
+// have api key
+var weatherApi = "589cc8ea7477fcd844916816d2a6ed86";
+
+
 $(document).ready(function() {
     // list all global variables here
     // pull from local storage
@@ -47,4 +51,26 @@ $(document).ready(function() {
     $('#clear-btn').on('click', clearHistory);
   
     showSearchHistory();
+
+    // write function for current weather and day to display
+
+    // need to use dayjs to show day
+
+    // need function for future weather
+
+    // need to fix previous searches so that they are clickable 
+
+
+    
+    // call to api using the URL based on location of object
+    // use longitude and latitude from separate api
+    // take what is delivered and parse it into the cards
+    // two calls for two apis
+    //  first call is for lat and long
+    // the 2nd call will be fore the actual forecast
+    // concat end of URL
+
+    
+    // don't forget the icon variables
+    
   });
