@@ -1,5 +1,13 @@
 // have api key
 var weatherApi = "589cc8ea7477fcd844916816d2a6ed86";
+var geoCode = "93B5F1C20C152244A14D2BEA382B7E9D";
+var cityName = document.getElementById('search-city');
+
+// https://api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}
+// https://pcmiler.alk.com/apis/rest/v1.0/Service.svc/locations?city={cityhere}&state={statehere}&dataset=Current
+
+// https://api.openweathermap.org/data/2.5/uvi/forecast?lat={lat}&lon=“{lon}&appid={API KEY}&cnt=1
+
 
 
 $(document).ready(function() {
@@ -35,6 +43,9 @@ $(document).ready(function() {
     // later add function here so that weather event will happen
     function buttonClick() {
       saveSearch();
+      
+     console.log(cityName);
+
     }
 
     function clearHistory (){
@@ -52,7 +63,39 @@ $(document).ready(function() {
   
     showSearchHistory();
 
+
+    // write function to get latitude and longitude
+    "https://api.openweathermap.org/data/2.5/weather?q="+cityName+"appid="+weatherApi+'"'
+    
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${weatherApi}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      let latitude = data.coord.lat;
+      console.log(latitude)
+      let longitude =data.coord.lon;
+      console.log(longitude)
+    });
+  
+    let object = {
+    firstname: "Jay",
+    occupation: "Gardener",
+    Country: "USA",
+    age: 57
+    }
+
+  
+
+    let string = `Hello my name is ${object.firstname}, I am ${object.age} years old and i'm a ${object.occupation} from ${object.Country}.`
+
+    console.log(string);
+
     // write function for current weather and day to display
+
+    // fetch('https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}', {
+
+    // })
+
 
     // need to use dayjs to show day
 
@@ -74,3 +117,6 @@ $(document).ready(function() {
     // don't forget the icon variables
     
   });
+
+
+  
